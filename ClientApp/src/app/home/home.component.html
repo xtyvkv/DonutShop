@@ -1,0 +1,38 @@
+<!--
+<style type="text/css">
+  .donutImg {
+    width: 150px;
+  }
+  .donutImg:hover {
+  border: 1px solid hotpink;
+  }
+
+  thead {
+    font-weight: bold;
+  }
+
+  td {
+    border: 1px solid #808080;
+    padding: 10px;
+  }
+</style>
+-->
+
+<h1>Welcome to Donut World!</h1>
+<h2>List of Donuts:</h2>
+<table>
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Photo</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let currDonut of donutList">
+      <td>{{ currDonut.id }}</td>
+      <td><a [routerLink]="['donutdetails/', currDonut.id]">{{ currDonut.name }}</a></td>
+      <td><a href="{{ currDonut.photo_attribution }}"><img style="width:150px;" src="{{ currDonut.photo }}" /></a></td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,17 @@
+<h1>Cart</h1>
+<table>
+  <tr>
+    <td>NAME</td>
+    <td>CALORIES</td>
+    <td>PRICE</td>
+  </tr>
+  <tr *ngFor="let currDonut of thisCart">
+    <td>{{ currDonut.name }}</td>
+    <td>{{ currDonut.calories }}</td>
+    <td>$1.00</td>
+    <td><button class="btn-primary btn-danger" (click)="removeFromCart(currDonut.id)">REMOVE</button></td>
+  </tr>
+</table>
+
+<h2>CART TOTAL: {{ thisCart.length | currency }}</h2>
+<h2>TOTAL CALORIES: {{ getTotalCalories() }}</h2>
